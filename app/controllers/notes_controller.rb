@@ -9,6 +9,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1
   def show
+    authorize @note
   end
 
   # POST /notes
@@ -40,7 +41,7 @@ class NotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_note
-    @note = Note.where(user_id:@user.id).find(params[:id])
+    @note = Note.find(params[:id])
   end
 
   # another field on our notes:

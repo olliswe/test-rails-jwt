@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::API
-  include ActionController::Helpers
-  helper AuthHelper
+  include Pundit
   before_action :authorized
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
 
   def encode_token(payload)
@@ -39,5 +40,16 @@ class ApplicationController < ActionController::API
   def authorized
     render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
   end
+
+  def current_user
+    @user
+  end
+
+
+  private
+  def user_not_authorized
+    head(:unauthorized)
+  end
+
 end
 

@@ -64,6 +64,7 @@
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.11.5, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v1.2.3, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.3.2, rbenv: 2.7.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pundit (v2.1.0, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.5.2, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.3, rbenv: 2.7.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-cors (v1.1.1, rbenv: 2.7.3) [gem]" level="application" />
@@ -106,7 +107,10 @@
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
+        <option value="pundit:install" />
+        <option value="pundit:policy" />
         <option value="resource" />
+        <option value="rspec:policy" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="system_test" />
@@ -122,6 +126,7 @@
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:policy" />
         <option value="test_unit:scaffold" />
         <option value="test_unit:system" />
       </list>
@@ -143,7 +148,10 @@
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
+        <option value="pundit:install" />
+        <option value="pundit:policy" />
         <option value="resource" />
+        <option value="rspec:policy" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="system_test" />
@@ -159,6 +167,7 @@
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:policy" />
         <option value="test_unit:scaffold" />
         <option value="test_unit:system" />
       </list>
