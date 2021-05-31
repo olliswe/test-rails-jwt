@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
+      UserProfile.create(first_name:user_profile_params.first_name,last_name:user_profile_params.last_name,   user_id:@user.id)
       token = encode_token({user_id: @user.id})
       render json: {user: @user, token: token}
     else
@@ -31,6 +32,11 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.permit(:username, :password, :age)
+    params.permit(:username, :password,:age, :first_name, :last_name)
+  end
+
+  private
+  def user_profile_params
+    params.permit(:age, :first_name, :last_name)
   end
 end

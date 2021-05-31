@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_one :user_profile
 
   # This is how you do an instance method:
   # def random_string
