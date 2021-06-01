@@ -1,10 +1,12 @@
 class NotesController < ApplicationController
   before_action :authorized
   before_action :set_note, only: [:show, :update, :destroy]
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
 
   # GET /notes
   def index
-    @notes = Note.where(user_id: @user.id)
+    @notes = policy_scope(Note)
   end
 
   # GET /notes/1
@@ -16,6 +18,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.user_id = @user.id
+    authorize @note
 
     if @note.save
       render json: @note, status: :created, location: @note
@@ -26,6 +29,7 @@ class NotesController < ApplicationController
 
   # PATCH/PUT /notes/1
   def update
+    authorize @note
     if @note.update(note_params)
       render json: @note
     else
@@ -35,6 +39,7 @@ class NotesController < ApplicationController
 
   # DELETE /notes/1
   def destroy
+    authorize @note
     @note.destroy
   end
 

@@ -1,5 +1,4 @@
-show_user ||= false
-if show_user
+if policy(note).can_see_author?
   json.author do
     json.extract!(note.user, :username, :id)
   end
