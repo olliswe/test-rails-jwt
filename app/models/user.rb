@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :notes, dependent: :destroy
+  has_one :user_profile, dependent: :destroy
 
   # This is how you do an instance method:
   # def random_string
