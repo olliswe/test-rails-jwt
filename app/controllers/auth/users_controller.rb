@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Auth::UsersController < ApplicationController
   before_action :authorized, only: [:me]
 
   # REGISTER
