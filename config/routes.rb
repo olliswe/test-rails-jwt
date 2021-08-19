@@ -1,3 +1,6 @@
+# require "resque_web"
+
+
 Rails.application.routes.draw do
   get 'notes/:id/:foo', to: 'notes#show', foo: /[A-Z]\d{5}/
   resources :notes, except: [:show] do
@@ -11,4 +14,7 @@ Rails.application.routes.draw do
       get :me
     end
   end
+
+  # mount ResqueWeb::Engine => "/resque_web"
+
 end
