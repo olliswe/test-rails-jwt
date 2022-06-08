@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'resque'
 gem 'redis-rails'
+gem 'resque-scheduler'
 # gem 'resque-web', require: 'resque_web'
 
 

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :notes, dependent: :destroy
+  validates_associated :notes
   accepts_nested_attributes_for :notes, allow_destroy: true
   has_one :user_profile, dependent: :destroy
   has_many :pictures, as: :imageable

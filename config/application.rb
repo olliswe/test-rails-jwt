@@ -38,6 +38,8 @@ module Notesapi
     config.api_only = true
     config.active_job.queue_adapter = :resque
 
+    config.action_mailer.preview_path = "#{Rails.root}/app/mailers/previews"
+
 
 
 
